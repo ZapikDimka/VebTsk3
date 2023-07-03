@@ -23,12 +23,17 @@ function saveData() {
 }
 
 function loadData() {
-    var data = localStorage.getItem('items');
-    if (data) {
-        items = JSON.parse(data);
-    } else {
-        items = [new Item("Помідори", 2, false, false), new Item("Печиво", 2, false, false), new Item("Сир", 2, false, false)];
-    }
+  var data = localStorage.getItem('items');
+  if (data) {
+    items = JSON.parse(data);
+  } else {
+    items = [];
+  }
+  if (items.length === 0) {
+    items.push(new Item("Помідори", 2, false, true));
+    items.push(new Item("Печиво", 2, false, false));
+    items.push(new Item("Сир", 6, true, false));
+  }
 }
 
 function createDetailedItem(id, item) {
@@ -203,7 +208,7 @@ function setItemName(id, value) {
         items[id].name = Item.formatName(value);
         update();
     } else {
-        alert("There is already a product with such name or the input is empty!");
+        alert("Стрічка або порожня, або товар з такою назвою вже є у списку");
     }
 }
 
@@ -232,22 +237,11 @@ function addItem(name) {
         items.push(new Item(name, 1, false, false));
         update();
     } else {
-        alert("There is already a product with such name or the input is empty!");
+        alert("Стрічка або порожня, або товар з такою назвою вже є у списку");
     }
 }
 
-function saveData() {
-    localStorage.setItem("shoppingListData", JSON.stringify(items));
-}
 
-function loadData() {
-    let data = localStorage.getItem("shoppingListData");
-    if (data) {
-        items = JSON.parse(data);
-    } else {
-        items = [new Item("Помідори", 2, false, false), new Item("Печиво", 2, false, false), new Item("Сир", 2, false, false)];
-    }
-}
 
 function main() {
     loadData();

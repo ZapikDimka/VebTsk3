@@ -1,6 +1,7 @@
 html {
-	background-color: #dadada;
-	font-family: Helvetica, Arial, sans-serif;
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+
+  font-family: Helvetica, Arial, sans-serif;
 	font-size: 2.5vmin;
 }
 
@@ -11,7 +12,14 @@ html {
 	padding: 1rem;
 	gap: 3rem;
 	align-items: stretch;
+  opacity: 0.6;
+
 }
+.product-cart:hover{
+  background-color: #a9a9a9;
+  opacity: 1;
+}
+
 
 .product-cart > * {
 	background-color: #ffffff;
@@ -59,7 +67,7 @@ html {
 	font-size: 0.7rem;
 	font-weight: bold;
 	color: #ffffff;
-	background-color: #2285d0;
+	background-color: #d00cef;
 	border: 0;
 	border-radius: 0 3px 3px 0;
 	border-bottom: 0.3rem solid #2276b7;
@@ -325,7 +333,7 @@ html {
 	align-items: center;
 	position: absolute;
 	bottom: 0;
-	left: 50%;	
+	left: 50%;
 	transform: translateX(-50%);
 	z-index: 1;
 	padding: 0.5rem;
@@ -362,7 +370,7 @@ html {
 	.product-list-compact {
 		flex-grow: 1;
 	}
-	
+
 }
 
 .badge {
@@ -380,10 +388,11 @@ html {
 }
 
 .badge:hover {
-	height: 5rem;
-	background-color: #4d01da;
-	border-color: #4d01da;
+  height: 5rem;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
 }
+
 
 .badge .header {
 	font-size: 1.7rem;
@@ -410,8 +419,8 @@ html {
 
 @media screen {
 	.badge {
-		background-color: #af01da;
-		color: #ffffff;
+		background-color: #13e7b5;
+		color: #0075ff;
 	}
 }
 
